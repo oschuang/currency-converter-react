@@ -1,11 +1,13 @@
 import React from "react";
-import "./App.css";
+// import "./App.css";
+import "../scss/css/main.min.css";
 
-import Button from "../components/Button";
-import Dropdown from "../components/Dropdown";
+// import Button from "../components/Button";
+// import Dropdown from "../components/Dropdown";
 import Result from "../components/Result";
-import Input from "../components/Input";
+// import Input from "../components/Input";
 import Chart from "../components/Chart";
+import Form from "../components/Form/Form";
 
 import { numberWithCommas } from "../utils/helpers";
 
@@ -145,22 +147,21 @@ class App extends React.Component {
       });
       resolve();
     }).then(() => {
+      this.setFromRate();
+      this.setToRate();
       this.getResult();
     });
   }
 
   validateInput(event) {
     let typed = event.charCode;
-
     const decimalCode = 46;
     const zeroCode = 48;
-
     //If not a number, prevent; Nums char code range: 48-57
     if (typed != decimalCode && (typed < 48 || typed > 57)) {
       console.log("not valid");
       event.preventDefault();
     }
-
     //Only allow one decimal point; if amount already has decimal then prevent
     if (typed == decimalCode) {
       if (
@@ -172,7 +173,6 @@ class App extends React.Component {
         event.preventDefault();
       }
     }
-
     //Can't start with a 0 i.e. if input is blank, prevent 0 from being typed
     if (typed === zeroCode) {
       if (!event.target.value) {
@@ -200,27 +200,15 @@ class App extends React.Component {
         <React.Fragment>
           <h2 id="header">Currency Converter</h2>
           <div id="top-wrapper">
-            <div id="forms-wrapper">
-              <Input
-                validateInput={this.validateInput}
-                handleInputAmount={this.handleInputAmount}
-              />
-              <Dropdown
-                listType={"From"}
-                currencies={this.state.currencies}
-                currentSelection={this.state.fromCurrency}
-                otherSelection={this.state.toCurrency}
-                handleSelectCurrency={this.handleSelectCurrency}
-              />
-              <Button switchCurrencies={this.switchCurrencies}></Button>
-              <Dropdown
-                listType={"To"}
-                currencies={this.state.currencies}
-                currentSelection={this.state.toCurrency}
-                otherSelection={this.state.fromCurrency}
-                handleSelectCurrency={this.handleSelectCurrency}
-              />
-            </div>
+            <Form
+              validateInput={this.validateInput}
+              handleInputAmount={this.handleInputAmount}
+              currencies={this.state.currencies}
+              fromCurrency={this.state.fromCurrency}
+              toCurrency={this.state.toCurrency}
+              handleSelectCurrency={this.handleSelectCurrency}
+              switchCurrencies={this.switchCurrencies}
+            />
             <Result
               fromCurrency={this.state.fromCurrency}
               toCurrency={this.state.toCurrency}

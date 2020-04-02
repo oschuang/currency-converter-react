@@ -1,20 +1,27 @@
+$blue: #1352a0;
+
+@mixin flex-column-centered {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  align-items: center;
+}
+
 #root {
   margin: 0 auto;
   width: 100%;
-  /*   border: 2px solid black; */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  @include flex-column-centered;
   margin-bottom: 1rem;
 }
 
 #loading-div {
   margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  @include flex-column-centered;
 }
 
 .hidden {
@@ -24,12 +31,12 @@
 #top-wrapper {
   padding-left: 2rem;
   padding-right: 2rem;
-  background-color: #1352a0;
+  background-color: $blue;
   border-radius: 10px;
 }
 
 body {
-  font-family: "Open Sans", "Sans-Serif";
+  font-family: "Open Sans", "Roboto", "Arial", "Sans-Serif";
 }
 
 /*=== FORM ELEMENTS ===*/
@@ -55,10 +62,7 @@ body {
 .form-div {
   margin-left: 0.5rem;
   margin-right: 0.5rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  @include flex-column-centered;
 }
 /* aligns text to left */
 .form-label {
@@ -78,24 +82,18 @@ body {
 /*Makes input and select same size*/
 input,
 select {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 
 /* Same as form-div with no margin */
 #button-div {
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  @include flex-column-centered;
 }
 #btn-switch {
   width: 5rem;
   font-size: 2.5rem;
   color: #15b76e;
-  background-color: #1352a0;
+  background-color: $blue;
   border: none;
   margin-top: -2rem;
   margin-bottom: -2rem;
@@ -137,7 +135,10 @@ select {
 .column-chart {
   width: 198px; /* stops chart from expanding */
   /*       border: 1px solid red; */
+  display: -webkit-box;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
   flex-direction: column;
 }
 .chart-header,
@@ -176,7 +177,7 @@ select {
   font-size: 0.8rem;
 }
 a {
-  color: #1352a0;
+  color: $blue;
   text-decoration: none;
 }
 
@@ -212,9 +213,14 @@ a {
   }
   #forms-wrapper {
     /*Adjust #board width and .square height for responsive*/
+    display: -webkit-box;
     display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
     flex-direction: row;
+    -webkit-box-pack: center;
     justify-content: center;
+    -webkit-box-align: center;
     align-items: center;
     margin-top: 0.5rem;
   }
