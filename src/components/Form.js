@@ -1,7 +1,7 @@
 import React from "react";
-import Input from "./Input/Input";
-import Dropdown from "./Dropdown/Dropdown";
-import Button from "./Button/Button";
+import Input from "./form-components/Input";
+import Dropdown from "./form-components/Dropdown";
+import Button from "./form-components/Button";
 
 const Form = function(props) {
   return (

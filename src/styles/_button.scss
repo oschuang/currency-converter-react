@@ -1,0 +1,32 @@
+@import "variables";
+
+#button-div {
+  @include flex-column-centered;
+}
+#btn-switch {
+  width: 5rem;
+  height: 50px;
+  font-size: 2.5rem;
+  color: white;
+  background-color: rgba(148, 148, 148, 0.849);
+  border: none;
+  margin-top: -2rem;
+  margin-bottom: -2rem;
+  cursor: pointer;
+}
+#arrow-horizontal {
+  display: none;
+}
+
+@media only screen and (min-width: 1000px) {
+  #btn-switch {
+    font-size: 2.5rem;
+    margin: 0;
+  }
+  #arrow-vertical {
+    display: none;
+  }
+  #arrow-horizontal {
+    display: inline-block;
+  }
+}

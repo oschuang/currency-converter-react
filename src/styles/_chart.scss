@@ -1,0 +1,70 @@
+@import "variables";
+
+#charts-wrapper {
+  /*Responsive edit for ipad/mobile: remove grid */
+  display: none; /*Hidden on mobile*/
+}
+.chart {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-bottom: 2rem;
+}
+.column-chart {
+  width: 198px; /* stops chart from expanding */
+  /*       border: 1px solid red; */
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  flex-direction: column;
+}
+.chart-header,
+.currency-header,
+.line-odd,
+.line-even {
+  width: 198px; /* stops chart from expanding */
+  /*Spacing between lines*/
+  padding-top: 0.6rem;
+  padding-bottom: 0.6rem;
+}
+.chart-header {
+  margin: 0 auto;
+}
+
+.currency-header {
+  margin-top: 0.5rem;
+  margin-bottom: 0;
+  border-top: 1px solid gray;
+}
+
+.line-odd,
+.line-even {
+  width: 100%; /*Changes border and background length */
+  margin: 0 auto;
+  border-top: 1px solid gray;
+}
+.line-odd {
+  background-color: #f2f2f2;
+}
+.line-even {
+  background-color: #e6e6e6;
+}
+
+@media only screen and (min-width: 760px) {
+  #charts-wrapper {
+    /*Responsive edit for ipad/mobile: remove grid */
+    display: block; /*Hidden on mobile*/
+    margin-top: 2rem;
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  /*Need to stop size from changing between conversions */
+  #charts-wrapper {
+    /*     width: 50%; */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 8rem;
+    margin-top: 2rem;
+  }
+}

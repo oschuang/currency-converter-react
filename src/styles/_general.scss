@@ -1,0 +1,59 @@
+@import "variables";
+
+#root {
+  margin: 0 auto;
+  width: 100%;
+  @include flex-column-centered;
+  margin-bottom: 1rem;
+}
+
+#loading-div {
+  margin: 0 auto;
+  @include flex-column-centered;
+}
+
+#top-wrapper {
+  padding-left: 2rem;
+  padding-right: 2rem;
+  background-color: $blue;
+  border-radius: 10px;
+}
+
+body {
+  font-family: "Open Sans", "Roboto", "Arial", "Sans-Serif";
+}
+
+#anchor {
+  font-size: 0.8rem;
+}
+a {
+  color: $blue;
+  text-decoration: none;
+}
+
+.hidden {
+  display: none;
+}
+
+@media only screen and (min-width: 760px) {
+  #header {
+    position: relative;
+    right: 7rem;
+  }
+  /* Increase background-color width to be wider than charts*/
+  #top-wrapper {
+    padding-left: 6rem;
+    padding-right: 6rem;
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  #header {
+    position: relative;
+    right: 21.8rem;
+  }
+  #top-wrapper {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}

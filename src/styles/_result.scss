@@ -1,0 +1,28 @@
+@import "variables";
+
+#result-div {
+  margin-top: 1rem;
+  text-align: center;
+  color: white;
+}
+#result-from-p {
+  font-size: 1.5rem;
+}
+
+#result-to-p {
+  font-size: 2.3rem;
+  position: relative;
+  top: -1rem;
+}
+
+@media only screen and (min-width: 760px) {
+  #result-div {
+    margin-top: 3rem;
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  #result-div {
+    margin-top: 4rem;
+  }
+}

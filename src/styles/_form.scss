@@ -1,0 +1,66 @@
+@import "variables";
+
+#forms-wrapper {
+  /*For mobile: disable flex/grid */
+  margin: 0 auto;
+  color: white;
+}
+
+.from-to {
+  position: relative; /* Had to set this bc img is absolute; this way img reacts to #from and not document when using right/top etc. */
+}
+
+#img-from,
+#img-to {
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  top: -10px;
+  left: 55px;
+}
+
+.form-div {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  @include flex-column-centered;
+}
+/* aligns text to left */
+.form-label {
+  font-size: 1.1rem;
+  align-self: flex-start;
+  width: 100%;
+  /*       border: 2px solid red; */
+}
+.form-element {
+  height: 4rem;
+  width: 16rem;
+  font-size: 1.25rem;
+  border: none;
+  border-radius: 10px;
+}
+
+/*Makes input and select same size*/
+input,
+select {
+  box-sizing: border-box;
+}
+
+@media only screen and (min-width: 1000px) {
+  #forms-wrapper {
+    /*Adjust #board width and .square height for responsive*/
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-direction: row;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    margin-top: 0.5rem;
+  }
+  #img-to {
+    left: 30px;
+    top: -10px;
+  }
+}

@@ -1,13 +1,9 @@
 import React from "react";
-// import "./App.css";
 import "../scss/css/main.min.css";
 
-// import Button from "../components/Button";
-// import Dropdown from "../components/Dropdown";
 import Result from "../components/Result";
-// import Input from "../components/Input";
 import Chart from "../components/Chart";
-import Form from "../components/Form/Form";
+import Form from "../components/Form";
 
 import { numberWithCommas } from "../utils/helpers";
 
