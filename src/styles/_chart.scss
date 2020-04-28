@@ -52,8 +52,7 @@
 
 @media only screen and (min-width: 760px) {
   #charts-wrapper {
-    /*Responsive edit for ipad/mobile: remove grid */
-    display: block; /*Hidden on mobile*/
+    display: block; /*To show it bc it's hidden on mobile*/
     margin-top: 2rem;
   }
 }

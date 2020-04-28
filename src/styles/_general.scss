@@ -13,6 +13,10 @@
 }
 
 #top-wrapper {
+  //Set speciifc width/height so different amounts dont stretch it
+  width: 300px;
+  height: 630px;
+
   padding-left: 2rem;
   padding-right: 2rem;
   background-color: $blue;
@@ -40,8 +44,8 @@ a {
     position: relative;
     right: 7rem;
   }
-  /* Increase background-color width to be wider than charts*/
   #top-wrapper {
+    width: 275px;
     padding-left: 6rem;
     padding-right: 6rem;
   }
@@ -53,6 +57,8 @@ a {
     right: 21.8rem;
   }
   #top-wrapper {
+    width: 900px;
+    height: 360px;
     padding-left: 1rem;
     padding-right: 1rem;
   }
